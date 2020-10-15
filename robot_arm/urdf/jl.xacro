@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    
+    <xacro:macro name="x_joint" params="name type axis origin_rpy origin_xyz parent child limit_low limit_up limit_eff limit_vel">
+        <joint name="${name}" type="${type}">
+            <axis xyz="${axis}"/>
+            <limit lower="${limit_low}" upper="${limit_up}" effort="${limit_eff}" velocity="${limit_vel}"/>
+            <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+            <parent link="${parent}"/>
+            <child link="${child}"/>
+        </joint>
+    </xacro:macro>
+    
+
+    <xacro:macro name="x_link_cylinder" params="name origin_xyz origin_rpy radius length">
+        <link name="${name}">
+            <visual>
+                <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+                <geometry>
+                    <cylinder radius="${radius}" length="${length}"/>
+                </geometry>
+            </visual>
+        </link>
+        
+    </xacro:macro>
+    
+
+    <xacro:macro name="x_link_box" params="name origin_xyz origin_rpy size">
+        <link name="${name}">
+            <visual>
+                <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+                <geometry>
+                    <box size="${size}"/>
+                </geometry>
+            </visual>
+        </link>
+    </xacro:macro>
+    
+
+    <xacro:macro name="x_link_ball" params="name origin_xyz origin_rpy radius">
+        <link name="${name}">
+            <visual>
+                <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+                <geometry>
+                    <sphere radius="${radius}"/>
+                </geometry>
+            </visual>
+        </link>
+    </xacro:macro>
+    
+
+</robot>
