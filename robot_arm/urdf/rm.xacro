@@ -64,11 +64,11 @@
 
     <xacro:x_joint name="${l06}+${l07}" type="revolute"
     axis="0 1 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
-    origin_xyz="0 0 -0.25"    origin_rpy="0 0 0"
+    origin_xyz="0 0 0"    origin_rpy="0 0 0"
     parent="${l06}"  child="${l07}"/>
 
     <xacro:x_link_box name="${l07}"
-    origin_xyz="0 0 0"  origin_rpy="0 0 0"
-    size="0.3 0.3 0.3"/> 
+    origin_xyz="0 0 -0.4"  origin_rpy="0 0 0"
+    size="0.3 0.3 0.5"/> 
 
 </robot>
