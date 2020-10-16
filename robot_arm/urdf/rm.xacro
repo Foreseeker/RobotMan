@@ -1,31 +1,20 @@
 <?xml version="1.0"?>
-
 <robot name="rm" xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-    <link name="base_link">
-        <visual>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
-            <geometry>
-                <box size="1 1 1"/> 
-            </geometry>
-        </visual>        
-    </link>
+    <xacro:include filename="$(find robot_arm)/urdf/jl.xacro"/>
+    <xacro:include filename="$(find robot_arm)/urdf/lp.xacro"/>
 
-    <joint name="base_link__link_01" type="revolute">
-        <axis xyz="0 0 1"/>
-        <limit lower="-3.14" upper="3.14" effort="1000.0" velocity="0.5"/>
-        <origin xyz="0.0 0.0 0.5" rpy="0.0 0.0 0.0"/>
-        <parent link="base_link"/>
-        <child link="link_01"/>
-    </joint>
-    <link name="link_01">
-        <visual>
-            <origin xyz="0.0 0.0 0.2" rpy="0.0 0.0 0.0"/>
-            <geometry>
-                <cylinder radius="0.35" length="0.4"/>
-            </geometry>
-        </visual>
-    </link>
+    <xacro:x_link_box name="${l00}"
+    origin_xyz="0 0 0"  origin_rpy="0 0 0"
+    size="1 1 3"/>   
+
+    <xacro:x_joint name="${l00}+${l01}" type="revolute"
+    axis="0 0 1"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0 0 0.5"    origin_rpy="0 0 0"
+    parent="${l00}"  child="${l01}"/>
+
+    <xacro:x_link_box name="${l01}"
+    origin_xyz="0 0 0.2"  origin_rpy="0 0 0"
+    size="1 1 1"/> 
     
-
 </robot>
