@@ -6,15 +6,69 @@
 
     <xacro:x_link_box name="${l00}"
     origin_xyz="0 0 0"  origin_rpy="0 0 0"
-    size="1 1 3"/>   
+    size="2 2 4"/>   
 
     <xacro:x_joint name="${l00}+${l01}" type="revolute"
-    axis="0 0 1"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
-    origin_xyz="0 0 0.5"    origin_rpy="0 0 0"
+    axis="0 1 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0 0 1"    origin_rpy="0 0 0"
     parent="${l00}"  child="${l01}"/>
 
     <xacro:x_link_box name="${l01}"
-    origin_xyz="0 0 0.2"  origin_rpy="0 0 0"
+    origin_xyz="0 1.5 0"  origin_rpy="0 0 0"
     size="1 1 1"/> 
-    
+
+    <xacro:x_joint name="${l01}+${l02}" type="revolute"
+    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0 1.5 -0.5"    origin_rpy="0 0 0"
+    parent="${l01}"  child="${l02}"/>
+
+    <xacro:x_link_ball name="${l02}"
+    origin_xyz="0 0 0" origin_rpy="0 0 0"
+    radius="0.4"/>
+
+    <xacro:x_joint name="${l02}+${l03}" type="revolute"
+    axis="0 0 1"    limit_low="0"   limit_up="0" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
+    parent="${l02}"  child="${l03}"/>
+
+    <xacro:x_link_cylinder name="${l03}"
+    origin_xyz="0 0 0" origin_rpy="0 0 0"
+    radius="0.3" length="1"/>
+
+    <xacro:x_joint name="${l03}+${l04}" type="revolute"
+    axis="0 0 1"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
+    parent="${l03}"  child="${l04}"/>
+
+    <xacro:x_link_ball name="${l04}"
+    origin_xyz="0 0 0" origin_rpy="0 0 0"
+    radius="0.3"/>
+
+    <xacro:x_joint name="${l04}+${l05}" type="revolute"
+    axis="0 1 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0 0 0"    origin_rpy="0 0 0"
+    parent="${l04}"  child="${l05}"/>
+
+    <xacro:x_link_cylinder name="${l05}"
+    origin_xyz="0 0 -0.4" origin_rpy="0 0 0"
+    radius="0.25" length="0.75"/>
+
+    <xacro:x_joint name="${l05}+${l06}" type="revolute"
+    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0 0 -0.75"    origin_rpy="0 0 0"
+    parent="${l05}"  child="${l06}"/>
+
+    <xacro:x_link_ball name="${l06}"
+    origin_xyz="0 0 0" origin_rpy="0 0 0"
+    radius="0.25"/>
+
+    <xacro:x_joint name="${l06}+${l07}" type="revolute"
+    axis="0 1 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0 0 -0.25"    origin_rpy="0 0 0"
+    parent="${l06}"  child="${l07}"/>
+
+    <xacro:x_link_box name="${l07}"
+    origin_xyz="0 0 0"  origin_rpy="0 0 0"
+    size="0.3 0.3 0.3"/> 
+
 </robot>
