@@ -12,8 +12,19 @@
     </xacro:macro>
     
 
-    <xacro:macro name="x_link_cylinder" params="name origin_xyz origin_rpy radius length">
+    <xacro:macro name="x_link_cylinder" params="name origin_xyz origin_rpy radius length mass ixx ixy ixz iyy iyz izz">
         <link name="${name}">
+            <inertial>
+                <mass value="${mass}"/>
+                <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+                <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" iyy="${iyy}" iyz="${iyz}" izz="${izz}"/>    
+            </inertial>
+            <collision>
+                <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+                <geometry>
+                    <cylinder radius="${radius}" length="${length}"/>
+                </geometry>
+            </collision>
             <visual>
                 <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
                 <geometry>
@@ -25,8 +36,19 @@
     </xacro:macro>
     
 
-    <xacro:macro name="x_link_box" params="name origin_xyz origin_rpy size">
+    <xacro:macro name="x_link_box" params="name origin_xyz origin_rpy size mass ixx ixy ixz iyy iyz izz">
         <link name="${name}">
+            <inertial>
+                <mass value="${mass}"/>
+                <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+                <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" iyy="${iyy}" iyz="${iyz}" izz="${izz}"/>    
+            </inertial>
+            <collision>
+               <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+                <geometry>
+                    <box size="${size}"/>
+                </geometry> 
+            </collision>
             <visual>
                 <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
                 <geometry>
@@ -37,8 +59,19 @@
     </xacro:macro>
     
 
-    <xacro:macro name="x_link_ball" params="name origin_xyz origin_rpy radius">
+    <xacro:macro name="x_link_ball" params="name origin_xyz origin_rpy radius mass ixx ixy ixz iyy iyz izz">
         <link name="${name}">
+            <inertial>
+                <mass value="${mass}"/>
+                    <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+                <inertia ixx="${ixx}" ixy="${ixy}" ixz="${ixz}" iyy="${iyy}" iyz="${iyz}" izz="${izz}"/>    
+            </inertial>
+            <collision>
+                <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
+                <geometry>
+                    <sphere radius="${radius}"/>
+                </geometry>
+            </collision>
             <visual>
                 <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
                 <geometry>
