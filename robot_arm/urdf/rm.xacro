@@ -8,7 +8,7 @@
     origin_xyz="0 0 0"  origin_rpy="0 0 0"
     size="2 2 4"/>   
 
-    <xacro:x_joint name="${l00}+${l01}" type="revolute"
+    <xacro:x_joint name="Shoulder_Up_Down" type="revolute"
     axis="0 1 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 1"    origin_rpy="0 0 0"
     parent="${l00}"  child="${l01}"/>
@@ -17,7 +17,7 @@
     origin_xyz="0 1.5 0"  origin_rpy="0 0 0"
     size="1 1 1"/> 
 
-    <xacro:x_joint name="${l01}+${l02}" type="revolute"
+    <xacro:x_joint name="Shoulder_Left_Right" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 1.5 -0.5"    origin_rpy="0 0 0"
     parent="${l01}"  child="${l02}"/>
@@ -26,7 +26,7 @@
     origin_xyz="0 0 0" origin_rpy="0 0 0"
     radius="0.4"/>
 
-    <xacro:x_joint name="${l02}+${l03}" type="revolute"
+    <xacro:x_joint name="Shoulder_Rotate_1" type="revolute"
     axis="0 0 1"    limit_low="0"   limit_up="0" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
     parent="${l02}"  child="${l03}"/>
@@ -35,7 +35,7 @@
     origin_xyz="0 0 0" origin_rpy="0 0 0"
     radius="0.3" length="1"/>
 
-    <xacro:x_joint name="${l03}+${l04}" type="revolute"
+    <xacro:x_joint name="Shoulder_Rotate" type="revolute"
     axis="0 0 1"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
     parent="${l03}"  child="${l04}"/>
@@ -44,7 +44,7 @@
     origin_xyz="0 0 0" origin_rpy="0 0 0"
     radius="0.3"/>
 
-    <xacro:x_joint name="${l04}+${l05}" type="revolute"
+    <xacro:x_joint name="Elbow_Up_Down" type="revolute"
     axis="0 1 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 0"    origin_rpy="0 0 0"
     parent="${l04}"  child="${l05}"/>
@@ -53,7 +53,7 @@
     origin_xyz="0 0 -0.4" origin_rpy="0 0 0"
     radius="0.25" length="0.75"/>
 
-    <xacro:x_joint name="${l05}+${l06}" type="revolute"
+    <xacro:x_joint name="Wrist_Left_Right" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.80"    origin_rpy="0 0 0"
     parent="${l05}"  child="${l06}"/>
@@ -62,7 +62,7 @@
     origin_xyz="0 0 0" origin_rpy="0 0 0"
     radius="0.20"/>
 
-    <xacro:x_joint name="${l06}+${l07}" type="revolute"
+    <xacro:x_joint name="Wrist_Rotate" type="revolute"
     axis="0 0 1"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.1"    origin_rpy="0 0 0"
     parent="${l06}"  child="${l07}"/>
@@ -71,8 +71,8 @@
     origin_xyz="0 0 -0.1"  origin_rpy="0 0 0"
     size="0.3 0.2 0.4"/> 
 
-    <!-- FINGER 1 -->
-    <xacro:x_joint name="${l07}+${l08}" type="revolute"
+    <!-- FINGER 1 A -->
+    <xacro:x_joint name="Index_1" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l08}"/>
@@ -81,8 +81,23 @@
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
     size="0.1 0.05 0.2"/>
 
-    <!-- FINGER 2 -->
-    <xacro:x_joint name="${l07}+${l09}" type="revolute"
+    <!-- FINGER 1 B -->
+
+    <!-- <xacro:x_joint name="${l07}+${l14}" type="revolute"
+    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0.08 0.08 -0.5"    origin_rpy="0 0 0"
+    parent="${l07}"  child="${l14}"/>
+
+    <xacro:x_link_ball name="${l14}"
+    origin_xyz="0 0 0" origin_rpy="0 0 0"
+    radius="0.05"/> -->
+
+    <!-- <xacro:x_link_box name="${l11}"
+    origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
+    size="0.1 0.05 0.2"/> -->
+
+    <!-- FINGER 2 A -->
+    <xacro:x_joint name="Ring_1" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l09}"/>
@@ -91,14 +106,43 @@
     origin_xyz="-0.17 0 -0.1" origin_rpy="0 0 0"
     size="0.1 0.05 0.2"/>
 
-    <!-- FINGER 3 -->
-    <xacro:x_joint name="${l07}+${l10}" type="revolute"
+    <!-- FINGER 2 B -->
+    <!-- <xacro:x_joint name="${l07}+${l15}" type="revolute"
+    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0.08 0.08 -0.5"    origin_rpy="0 0 0"
+    parent="${l07}"  child="${l15}"/>
+
+    <xacro:x_link_ball name="${l15}"
+    origin_xyz="-0.17 0 0" origin_rpy="0 0 0"
+    radius="0.05"/> -->
+
+    <!-- <xacro:x_link_box name="${l12}"
+    origin_xyz="-0.17 0 -0.1" origin_rpy="0 0 0"
+    size="0.1 0.05 0.2"/> -->
+
+    <!-- FINGER 3 A-->
+    <xacro:x_joint name="Thumb_1" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 -0.06 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l10}"/>
 
     <xacro:x_link_box name="${l10}"
-    origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
+    origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
     size="0.1 0.05 0.2"/>
+
+    <!-- FINGER 3 B-->
+    <!-- <xacro:x_joint name="${l07}+${l16}" type="revolute"
+    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0.08 -0.06 -0.5"    origin_rpy="0 0 0"
+    parent="${l07}"  child="${l16}"/>
+
+    <xacro:x_link_ball name="${l16}"
+    origin_xyz="0 0 0" origin_rpy="0 0 0"
+    radius="0.05"/> -->
+
+
+    <!-- <xacro:x_link_box name="${l13}"
+    origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
+    size="0.1 0.05 0.2"/> -->
 
 </robot>
