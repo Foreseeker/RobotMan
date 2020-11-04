@@ -83,18 +83,18 @@
 
     <!-- FINGER 1 B -->
 
-    <!-- <xacro:x_joint name="${l07}+${l14}" type="revolute"
+     <xacro:x_joint name="Index_2" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
-    origin_xyz="0.08 0.08 -0.5"    origin_rpy="0 0 0"
-    parent="${l07}"  child="${l14}"/>
+    origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
+    parent="${l08}"  child="${l11}"/>
 
-    <xacro:x_link_ball name="${l14}"
+    <!-- <xacro:x_link_ball name="${l14}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
-    radius="0.05"/> -->
+    radius="0.05"/>  -->
 
-    <!-- <xacro:x_link_box name="${l11}"
+    <xacro:x_link_box name="${l11}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
-    size="0.1 0.05 0.2"/> -->
+    size="0.1 0.05 0.2"/> 
 
     <!-- FINGER 2 A -->
     <xacro:x_joint name="Ring_1" type="revolute"
@@ -107,18 +107,18 @@
     size="0.1 0.05 0.2"/>
 
     <!-- FINGER 2 B -->
-    <!-- <xacro:x_joint name="${l07}+${l15}" type="revolute"
+    <xacro:x_joint name="Ring_2" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
-    origin_xyz="0.08 0.08 -0.5"    origin_rpy="0 0 0"
-    parent="${l07}"  child="${l15}"/>
+    origin_xyz="-0.17 0 -0.2"    origin_rpy="0 0 0"
+    parent="${l09}"  child="${l12}"/>
 
-    <xacro:x_link_ball name="${l15}"
+    <!-- <xacro:x_link_ball name="${l15}"
     origin_xyz="-0.17 0 0" origin_rpy="0 0 0"
-    radius="0.05"/> -->
+    radius="0.05"/>  -->
 
-    <!-- <xacro:x_link_box name="${l12}"
-    origin_xyz="-0.17 0 -0.1" origin_rpy="0 0 0"
-    size="0.1 0.05 0.2"/> -->
+    <xacro:x_link_box name="${l12}"
+    origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
+    size="0.1 0.05 0.2"/>
 
     <!-- FINGER 3 A-->
     <xacro:x_joint name="Thumb_1" type="revolute"
@@ -131,18 +131,18 @@
     size="0.1 0.05 0.2"/>
 
     <!-- FINGER 3 B-->
-    <!-- <xacro:x_joint name="${l07}+${l16}" type="revolute"
+    <xacro:x_joint name="Thumb_2" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
-    origin_xyz="0.08 -0.06 -0.5"    origin_rpy="0 0 0"
-    parent="${l07}"  child="${l16}"/>
+    origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
+    parent="${l10}"  child="${l13}"/>
 
-    <xacro:x_link_ball name="${l16}"
+    <!-- <xacro:x_link_ball name="${l16}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
     radius="0.05"/> -->
 
 
-    <!-- <xacro:x_link_box name="${l13}"
+    <xacro:x_link_box name="${l13}"
     origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
-    size="0.1 0.05 0.2"/> -->
+    size="0.1 0.05 0.2"/>
 
 </robot>
