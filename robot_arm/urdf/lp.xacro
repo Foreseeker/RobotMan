@@ -8,4 +8,10 @@
     <xacro:property name="l05" value="link_05"/>
     <xacro:property name="l06" value="link_06"/>
     <xacro:property name="l07" value="link_07"/>
+    <xacro:property name="l08" value="link_08"/>
+    <xacro:property name="l09" value="link_09"/>
+    <xacro:property name="l10" value="link_10"/>
+    <xacro:property name="l11" value="link_11"/>
+    <xacro:property name="l12" value="link_12"/>
+    <xacro:property name="l13" value="link_13"/>
 </robot>

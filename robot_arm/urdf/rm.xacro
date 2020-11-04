@@ -55,20 +55,50 @@
 
     <xacro:x_joint name="${l05}+${l06}" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
-    origin_xyz="0 0 -0.75"    origin_rpy="0 0 0"
+    origin_xyz="0 0 -0.80"    origin_rpy="0 0 0"
     parent="${l05}"  child="${l06}"/>
 
     <xacro:x_link_ball name="${l06}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
-    radius="0.25"/>
+    radius="0.20"/>
 
     <xacro:x_joint name="${l06}+${l07}" type="revolute"
-    axis="0 1 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
-    origin_xyz="0 0 0"    origin_rpy="0 0 0"
+    axis="0 0 1"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0 0 -0.1"    origin_rpy="0 0 0"
     parent="${l06}"  child="${l07}"/>
 
     <xacro:x_link_box name="${l07}"
-    origin_xyz="0 0 -0.4"  origin_rpy="0 0 0"
-    size="0.3 0.3 0.5"/> 
+    origin_xyz="0 0 -0.1"  origin_rpy="0 0 0"
+    size="0.3 0.2 0.4"/> 
+
+    <!-- FINGER 1 -->
+    <xacro:x_joint name="${l07}+${l08}" type="revolute"
+    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
+    parent="${l07}"  child="${l08}"/>
+
+    <xacro:x_link_box name="${l08}"
+    origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
+    size="0.1 0.05 0.2"/>
+
+    <!-- FINGER 2 -->
+    <xacro:x_joint name="${l07}+${l09}" type="revolute"
+    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
+    parent="${l07}"  child="${l09}"/>
+
+    <xacro:x_link_box name="${l09}"
+    origin_xyz="-0.17 0 -0.1" origin_rpy="0 0 0"
+    size="0.1 0.05 0.2"/>
+
+    <!-- FINGER 3 -->
+    <xacro:x_joint name="${l07}+${l10}" type="revolute"
+    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    origin_xyz="0.08 -0.06 -0.3"    origin_rpy="0 0 0"
+    parent="${l07}"  child="${l10}"/>
+
+    <xacro:x_link_box name="${l10}"
+    origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
+    size="0.1 0.05 0.2"/>
 
 </robot>
