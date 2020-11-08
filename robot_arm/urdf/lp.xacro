@@ -17,5 +17,4 @@
     <xacro:property name="l14" value="link_14"/>
     <xacro:property name="l15" value="link_15"/>
     <xacro:property name="l16" value="link_16"/>
-
 </robot>
