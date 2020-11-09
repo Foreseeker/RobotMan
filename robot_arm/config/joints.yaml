@@ -4,9 +4,10 @@ joint_state_controller:
 
 joint1_postion_controller:
   type: effort_controllers/JointPositionController
-  joint: Shoulder_Up_Down
-  pid: {p: 700, i: 50, d: 70}
-#joint2_postion_controller:
- # type: effort_controllers/JointPositionController
-  #joint: ink_01__link_02
-  #pid: {p: 700, i: 50, d: 70}
+  joint: base_link__link_01
+  pid: {p: 2000.0, i: 100, d: 500.0}
+  
+joint2_postion_controller:
+  type: effort_controllers/JointPositionController
+  joint: link_01__link_02
+  pid: {p: 50000.0, i: 100, d: 2000.0}

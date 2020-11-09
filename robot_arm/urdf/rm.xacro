@@ -11,17 +11,17 @@
     ixx="1" ixy="0" ixz="0" iyy="1" izz="2" iyz="0"
     size="2 2 4"/>   
 
-    <xacro:x_joint name="Shoulder_Up_Down" type="revolute"
+    <xacro:x_joint name="base_link__link_01" type="revolute"
     axis="0 1 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.2"
     origin_xyz="0 0 1"    origin_rpy="0 0 0"
     parent="${l00}"  child="${l01}"/>
 
-    <transmission name="trans_Shoulder_Up_Down">
+    <transmission name="trans_base_link__link_01">
         <type>transmission_interface/SimpleTransmission</type>
-        <joint name="Shoulder_Up_Down">
+        <joint name="base_link__link_01">
             <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         </joint>
-        <actuator name="motor_Shoulder_Up_Down">
+        <actuator name="motor_base_link__link_01">
             <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
@@ -33,7 +33,7 @@
     ixx="0.5" ixy="0" ixz="0" iyy="0.5" izz="0.5" iyz="0"
     size="1 1 1"/> 
 
-    <xacro:x_joint name="Shoulder_Left_Right" type="revolute"
+<!--     <xacro:x_joint name="Shoulder_Left_Right" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 1.5 -0.5"    origin_rpy="0 0 0"
     parent="${l01}"  child="${l02}"/>
@@ -99,7 +99,7 @@
     ixx="0.15" ixy="0" ixz="0" iyy="0.1" izz="0.2" iyz="0"
     size="0.3 0.2 0.4"/> 
 
-    <!-- FINGER 1 A -->
+     FINGER 1 A 
     <xacro:x_joint name="Index_1" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
@@ -111,9 +111,9 @@
     ixx="0.05" ixy="0" ixz="0" iyy="0.025" izz="0.1" iyz="0"
     size="0.1 0.05 0.2"/>
 
-    <!-- FINGER 1 B -->
+     FINGER 1 B 
 
-     <xacro:x_joint name="Index_2" type="revolute"
+    <xacro:x_joint name="Index_2" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
     parent="${l08}"  child="${l11}"/>
@@ -124,7 +124,7 @@
     ixx="0.05" ixy="0" ixz="0" iyy="0.025" izz="0.1" iyz="0"
     size="0.1 0.05 0.2"/> 
 
-    <!-- FINGER 2 A -->
+     FINGER 2 A 
     <xacro:x_joint name="Ring_1" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
@@ -136,7 +136,7 @@
     ixx="0.05" ixy="0" ixz="0" iyy="0.025" izz="0.1" iyz="0"
     size="0.1 0.05 0.2"/>
 
-    <!-- FINGER 2 B -->
+     FINGER 2 B 
     <xacro:x_joint name="Ring_2" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="-0.17 0 -0.2"    origin_rpy="0 0 0"
@@ -148,7 +148,7 @@
     ixx="0.05" ixy="0" ixz="0" iyy="0.025" izz="0.1" iyz="0"
     size="0.1 0.05 0.2"/>
 
-    <!-- FINGER 3 A-->
+     FINGER 3 A
     <xacro:x_joint name="Thumb_1" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 -0.06 -0.3"    origin_rpy="0 0 0"
@@ -160,7 +160,7 @@
     ixx="0.05" ixy="0" ixz="0" iyy="0.025" izz="0.1" iyz="0"
     size="0.1 0.05 0.2"/>
 
-    <!-- FINGER 3 B-->
+     FINGER 3 B
     <xacro:x_joint name="Thumb_2" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
@@ -170,7 +170,7 @@
     origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
     mass = "2"
     ixx="0.05" ixy="0" ixz="0" iyy="0.025" izz="0.1" iyz="0"
-    size="0.1 0.05 0.2"/>
+    size="0.1 0.05 0.2"/> -->
 
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">

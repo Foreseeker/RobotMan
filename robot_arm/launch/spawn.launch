@@ -25,7 +25,7 @@
         args="--namespace=/rm
         joint_state_controller
         joint1_position_controller
-        --timeout 69">
+        --timeout 60">
         </node>
         
     </group>
