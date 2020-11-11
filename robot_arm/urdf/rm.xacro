@@ -11,17 +11,17 @@
     ixx="4000" ixy="0" ixz="0" iyy="800" izz="4000" iyz="0"
     size="2 2 6"/>   
 
-    <xacro:x_joint name="base_link__link_01" type="revolute"
+    <xacro:x_joint name="Shoulder_01" type="revolute"
     axis="0 1 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.2"
     origin_xyz="0 0 2"    origin_rpy="0 0 0"
     parent="${l00}"  child="${l01}"/>
 
-    <transmission name="trans_base_link__link_01">
+    <transmission name="trans_Shoulder_01">
         <type>transmission_interface/SimpleTransmission</type>
-        <joint name="base_link__link_01">
+        <joint name="Shoulder_01">
             <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
         </joint>
-        <actuator name="motor_base_link__link_01">
+        <actuator name="motor_Shoulder_01">
             <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
             <mechanicalReduction>1</mechanicalReduction>
         </actuator>
@@ -33,10 +33,21 @@
     ixx="32" ixy="0" ixz="0" iyy="32" izz="32" iyz="0"
     size="1 1 1"/> 
 
-<!--     <xacro:x_joint name="Shoulder_Left_Right" type="revolute"
+    <xacro:x_joint name="Shoulder_02" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 1.5 -0.5"    origin_rpy="0 0 0"
     parent="${l01}"  child="${l02}"/>
+
+    <transmission name="trans_Shoulder_02">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Shoulder_02">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="Shoulder_02">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
     <xacro:x_link_ball name="${l02}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
@@ -44,10 +55,21 @@
     ixx="0.2" ixy="0" ixz="0" iyy="0.2" izz="0.2" iyz="0"
     radius="0.4"/>
 
-    <xacro:x_joint name="Shoulder_Rotate_1" type="revolute"
+    <xacro:x_joint name="Arm_01" type="revolute"
     axis="0 0 1"    limit_low="0"   limit_up="0" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
     parent="${l02}"  child="${l03}"/>
+
+    <transmission name="trans_Arm_01">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Arm_01">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_Arm_01">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
     <xacro:x_link_cylinder name="${l03}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
@@ -55,10 +77,22 @@
     ixx="5.08" ixy="0" ixz="0" iyy="5.08" izz="24" iyz="0"
     radius="0.3" length="1"/>
 
-    <xacro:x_joint name="Shoulder_Rotate" type="revolute"
+   
+    <xacro:x_joint name="Arm_02" type="revolute"
     axis="0 0 1"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
     parent="${l03}"  child="${l04}"/>
+
+    <transmission name="trans_Arm_02">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Arm_02">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_Arm_02">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
     <xacro:x_link_ball name="${l04}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
@@ -66,10 +100,21 @@
     ixx="0.54" ixy="0" ixz="0" iyy="0.54" izz="0.54" iyz="0"
     radius="0.3"/>
 
-    <xacro:x_joint name="Elbow_Up_Down" type="revolute"
+    <xacro:x_joint name="Arm_03" type="revolute"
     axis="0 1 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 0"    origin_rpy="0 0 0"
     parent="${l04}"  child="${l05}"/>
+
+    <transmission name="trans_Arm_03">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Arm_03">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_Arm_03">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
     <xacro:x_link_cylinder name="${l05}"
     origin_xyz="0 0 -0.4" origin_rpy="0 0 0"
@@ -77,10 +122,22 @@
     ixx="2.25" ixy="0" ixz="0" iyy="2.25" izz="1.125" iyz="0"
     radius="0.25" length="0.75"/>
 
-    <xacro:x_joint name="Wrist_Left_Right" type="revolute"
+    
+    <xacro:x_joint name="Wrist" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.80"    origin_rpy="0 0 0"
     parent="${l05}"  child="${l06}"/>
+
+    <transmission name="trans_Wrist">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Wrist">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_Wrist">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
     <xacro:x_link_ball name="${l06}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
@@ -88,10 +145,21 @@
     ixx="0.24" ixy="0" ixz="0" iyy="0.24" izz="0.24" iyz="0"
     radius="0.20"/>
 
-    <xacro:x_joint name="Wrist_Rotate" type="revolute"
+    <xacro:x_joint name="Hand" type="revolute"
     axis="0 0 1"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.1"    origin_rpy="0 0 0"
     parent="${l06}"  child="${l07}"/>
+
+    <transmission name="trans_Hand">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Hand">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_Hand">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
     <xacro:x_link_box name="${l07}"
     origin_xyz="0 0 -0.1"  origin_rpy="0 0 0"
@@ -99,11 +167,24 @@
     ixx="0.5" ixy="0" ixz="0" iyy="0.26" izz="0.2" iyz="0.4"
     size="0.3 0.2 0.4"/> 
 
-     FINGER 1 A 
-    <xacro:x_joint name="Index_1" type="revolute"
+
+
+     <!--Index FINGER A -->
+    <xacro:x_joint name="Finger_01_A" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l08}"/>
+
+    <transmission name="trans_Finger_01_A">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Finger_01_A">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_Finger_01_A">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
     <xacro:x_link_box name="${l08}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
@@ -111,12 +192,24 @@
     ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
     size="0.1 0.05 0.2"/>
 
-     FINGER 1 B 
+<!--
+     FINGER 1 B -->
 
-    <xacro:x_joint name="Index_2" type="revolute"
+    <xacro:x_joint name="Finger_01_B" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
     parent="${l08}"  child="${l11}"/>
+
+    <transmission name="trans_Finger_01_B">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Finger_01_B">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_Finger_01_B">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
     <xacro:x_link_box name="${l11}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
@@ -124,11 +217,22 @@
     ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
     size="0.1 0.05 0.2"/> 
 
-     FINGER 2 A 
-    <xacro:x_joint name="Ring_1" type="revolute"
+   <!--  FINGER 2 A -->
+    <xacro:x_joint name="Finger_02_A" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l09}"/>
+
+    <transmission name="trans_Finger_02_A">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Finger_02_A">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_Finger_02_A">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
     <xacro:x_link_box name="${l09}"
     origin_xyz="-0.17 0 -0.1" origin_rpy="0 0 0"
@@ -136,23 +240,46 @@
     ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
     size="0.1 0.05 0.2"/>
 
-     FINGER 2 B 
-    <xacro:x_joint name="Ring_2" type="revolute"
+     <!-- FINGER 2 B --> 
+    <xacro:x_joint name="Finger_02_B" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="-0.17 0 -0.2"    origin_rpy="0 0 0"
     parent="${l09}"  child="${l12}"/>
+
+    <transmission name="trans_Finger_02_B">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Finger_02_B">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_Finger_02_B">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
     <xacro:x_link_box name="${l12}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
     mass = "4"
     ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
     size="0.1 0.05 0.2"/>
+    
 
-     FINGER 3 A
-    <xacro:x_joint name="Thumb_1" type="revolute"
+    <!--  FINGER 3 A -->
+    <xacro:x_joint name="Finger_03_A" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 -0.06 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l10}"/>
+
+    <transmission name="trans_Finger_03_A">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Finger_03_A">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_Finger_03_A">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
     <xacro:x_link_box name="${l10}"
     origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
@@ -160,17 +287,28 @@
     ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
     size="0.1 0.05 0.2"/>
 
-     FINGER 3 B
-    <xacro:x_joint name="Thumb_2" type="revolute"
+     <!-- FINGER 3 B -->
+    <xacro:x_joint name="Finger_03_B" type="revolute"
     axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
     parent="${l10}"  child="${l13}"/>
+
+    <transmission name="trans_Finger_03_B">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="Finger_03_B">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="motor_Finger_03_B">
+            <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
 
     <xacro:x_link_box name="${l13}"
     origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
     mass = "4"
     ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
-    size="0.1 0.05 0.2"/> -->
+    size="0.1 0.05 0.2"/> 
 
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
