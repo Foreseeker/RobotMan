@@ -6,7 +6,7 @@
 
         <arg name="x" default="0"/>
         <arg name="y" default="0"/>
-        <arg name="z" default="2"/>
+        <arg name="z" default="3"/>
 
         <node name="robot_spawn" 
         pkg="gazebo_ros" 
