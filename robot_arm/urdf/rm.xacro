@@ -8,11 +8,11 @@
     <xacro:x_link_box name="${l00}"
     origin_xyz="0 0 0"  origin_rpy="0 0 0"
     mass = "1200"
-    ixx="4000" ixy="0" ixz="0" iyy="800" izz="4000" iyz="0"
+    ixx="4000" ixy="0" ixz="0" iyy="4000" izz="800" iyz="0"
     size="2 2 6"/>   
 
     <xacro:x_joint name="Shoulder_01" type="revolute"
-    axis="0 1 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.2"
+    axis="0 1 0"    limit_low="-1.85"   limit_up="3.14" limit_eff="1000"    limit_vel="0.2"
     origin_xyz="0 0 2"    origin_rpy="0 0 0"
     parent="${l00}"  child="${l01}"/>
 
@@ -34,7 +34,7 @@
     size="1 1 1"/> 
 
     <xacro:x_joint name="Shoulder_02" type="revolute"
-    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-3.14"   limit_up="2.5" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 1.5 -0.5"    origin_rpy="0 0 0"
     parent="${l01}"  child="${l02}"/>
 
@@ -74,7 +74,7 @@
     <xacro:x_link_cylinder name="${l03}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
     mass = "48"
-    ixx="5.08" ixy="0" ixz="0" iyy="5.08" izz="24" iyz="0"
+    ixx="5.08" ixy="0" ixz="0" iyy="5.08" izz="2.16" iyz="0"
     radius="0.3" length="1"/>
 
    
@@ -118,8 +118,8 @@
 
     <xacro:x_link_cylinder name="${l05}"
     origin_xyz="0 0 -0.4" origin_rpy="0 0 0"
-    mass = "36"
-    ixx="2.25" ixy="0" ixz="0" iyy="2.25" izz="1.125" iyz="0"
+    mass = "48"
+    ixx="3" ixy="0" ixz="0" iyy="3" izz="2.25" iyz="0"
     radius="0.25" length="0.75"/>
 
     
@@ -164,7 +164,7 @@
     <xacro:x_link_box name="${l07}"
     origin_xyz="0 0 -0.1"  origin_rpy="0 0 0"
     mass = "24"
-    ixx="0.5" ixy="0" ixz="0" iyy="0.26" izz="0.2" iyz="0.4"
+    ixx="0.5" ixy="0" ixz="0" iyy="0.26" izz="1.36" iyz="0"
     size="0.3 0.2 0.4"/> 
 
 
@@ -189,7 +189,7 @@
     <xacro:x_link_box name="${l08}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
     mass = "4"
-    ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
+    ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
     size="0.1 0.05 0.2"/>
 
 <!--
@@ -237,7 +237,7 @@
     <xacro:x_link_box name="${l09}"
     origin_xyz="-0.17 0 -0.1" origin_rpy="0 0 0"
     mass = "4"
-    ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
+    ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
     size="0.1 0.05 0.2"/>
 
      <!-- FINGER 2 B --> 
@@ -260,7 +260,7 @@
     <xacro:x_link_box name="${l12}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
     mass = "4"
-    ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
+    ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
     size="0.1 0.05 0.2"/>
     
 
@@ -284,7 +284,7 @@
     <xacro:x_link_box name="${l10}"
     origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
     mass = "4"
-    ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
+    ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
     size="0.1 0.05 0.2"/>
 
      <!-- FINGER 3 B -->
@@ -307,7 +307,7 @@
     <xacro:x_link_box name="${l13}"
     origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
     mass = "4"
-    ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
+    ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
     size="0.1 0.05 0.2"/> 
 
     <gazebo>
