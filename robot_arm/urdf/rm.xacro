@@ -7,12 +7,12 @@
     <!-- Opis robota -->
     <xacro:x_link_box name="${l00}"
     origin_xyz="0 0 0"  origin_rpy="0 0 0"
-    mass = "1200"
-    ixx="4000" ixy="0" ixz="0" iyy="4000" izz="800" iyz="0"
+    mass = "2400"
+    ixx="8000" ixy="0" ixz="0" iyy="1600" izz="8000" iyz="0"
     size="2 2 6"/>   
 
     <xacro:x_joint name="Shoulder_01" type="revolute"
-    axis="0 1 0"    limit_low="-1.85"   limit_up="3.14" limit_eff="1000"    limit_vel="0.2"
+    axis="0 1 0"    limit_low="-1.82"   limit_up="3.14" limit_eff="10000"  limit_vel="0.5"
     origin_xyz="0 0 2"    origin_rpy="0 0 0"
     parent="${l00}"  child="${l01}"/>
 
@@ -34,7 +34,7 @@
     size="1 1 1"/> 
 
     <xacro:x_joint name="Shoulder_02" type="revolute"
-    axis="1 0 0"    limit_low="-3.14"   limit_up="2.5" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-0.35"   limit_up="1.6" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 1.5 -0.5"    origin_rpy="0 0 0"
     parent="${l01}"  child="${l02}"/>
 
@@ -79,7 +79,7 @@
 
    
     <xacro:x_joint name="Arm_02" type="revolute"
-    axis="0 0 1"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    axis="0 0 1"    limit_low="-1.6"   limit_up="1.60" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
     parent="${l03}"  child="${l04}"/>
 
@@ -101,7 +101,7 @@
     radius="0.3"/>
 
     <xacro:x_joint name="Arm_03" type="revolute"
-    axis="0 1 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    axis="0 1 0"    limit_low="0"   limit_up="2.38" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 0"    origin_rpy="0 0 0"
     parent="${l04}"  child="${l05}"/>
 
@@ -124,7 +124,7 @@
 
     
     <xacro:x_joint name="Wrist" type="revolute"
-    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-1.6"   limit_up="1.6" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.80"    origin_rpy="0 0 0"
     parent="${l05}"  child="${l06}"/>
 
@@ -146,7 +146,7 @@
     radius="0.20"/>
 
     <xacro:x_joint name="Hand" type="revolute"
-    axis="0 0 1"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    axis="0 0 1"    limit_low="-1.62"   limit_up="1.52" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.1"    origin_rpy="0 0 0"
     parent="${l06}"  child="${l07}"/>
 
@@ -171,7 +171,7 @@
 
      <!--Index FINGER A -->
     <xacro:x_joint name="Finger_01_A" type="revolute"
-    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-1.4"   limit_up="1.08" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l08}"/>
 
@@ -196,7 +196,7 @@
      FINGER 1 B -->
 
     <xacro:x_joint name="Finger_01_B" type="revolute"
-    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-2.27"   limit_up="0" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
     parent="${l08}"  child="${l11}"/>
 
@@ -219,7 +219,7 @@
 
    <!--  FINGER 2 A -->
     <xacro:x_joint name="Finger_02_A" type="revolute"
-    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-1.4"   limit_up="1.08" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l09}"/>
 
@@ -242,7 +242,7 @@
 
      <!-- FINGER 2 B --> 
     <xacro:x_joint name="Finger_02_B" type="revolute"
-    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-2.27"   limit_up="0" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="-0.17 0 -0.2"    origin_rpy="0 0 0"
     parent="${l09}"  child="${l12}"/>
 
@@ -266,7 +266,7 @@
 
     <!--  FINGER 3 A -->
     <xacro:x_joint name="Finger_03_A" type="revolute"
-    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-1.05"   limit_up="1.23" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 -0.06 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l10}"/>
 
@@ -289,7 +289,7 @@
 
      <!-- FINGER 3 B -->
     <xacro:x_joint name="Finger_03_B" type="revolute"
-    axis="1 0 0"    limit_low="-3.14"   limit_up="3.14" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="0"   limit_up="1.6" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
     parent="${l10}"  child="${l13}"/>
 
