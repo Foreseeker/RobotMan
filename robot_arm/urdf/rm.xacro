@@ -3,17 +3,19 @@
 
     <xacro:include filename="$(find robot_arm)/urdf/jl.xacro"/>
     <xacro:include filename="$(find robot_arm)/urdf/lp.xacro"/>
+    <xacro:include filename="$(find robot_arm)/urdf/materials.xacro"/>
 
-    <!-- Opis robota -->
+    <!-- Baza -->
     <xacro:x_link_box name="${l00}"
     origin_xyz="0 0 0"  origin_rpy="0 0 0"
-    mass = "2400"
+    mass = "2400" size="2 2 6"
     ixx="8000" ixy="0" ixz="0" iyy="1600" izz="8000" iyz="0"
-    size="2 2 6"/>   
+    material="Rust" 
+    />   
 
     <!-- Barka, przód tył -->
     <xacro:x_joint name="Shoulder_01" type="revolute"
-    axis="0 1 0"    limit_low="0.87"   limit_up="-2.97" limit_eff="10000"  limit_vel="0.5"
+    axis="0 1 0"    limit_low="0.87"   limit_up="-2.97" limit_eff="1000"  limit_vel="0.5"
     origin_xyz="0 0 2"    origin_rpy="0 0 0"
     parent="${l00}"  child="${l01}"/>
 
@@ -30,9 +32,9 @@
 
     <xacro:x_link_box name="${l01}"
     origin_xyz="0 1.5 0"  origin_rpy="0 0 0"
-    mass = "192"
+    mass = "192" size="1 1 1"
     ixx="32" ixy="0" ixz="0" iyy="32" izz="32" iyz="0"
-    size="1 1 1"/> 
+    material="Rust" /> 
 
     <!-- Bark, od siebie do siebie -->
     <xacro:x_joint name="Shoulder_02" type="revolute"
@@ -53,9 +55,9 @@
 
     <xacro:x_link_ball name="${l02}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
-    mass = "40"
+    mass = "40" radius="0.4"
     ixx="0.2" ixy="0" ixz="0" iyy="0.2" izz="0.2" iyz="0"
-    radius="0.4"/>
+    material="Rust" />
 
     <!-- Ramię, martwy joint -->
     <xacro:x_joint name="Arm_01" type="revolute"
@@ -76,9 +78,9 @@
 
     <xacro:x_link_cylinder name="${l03}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
-    mass = "48"
+    mass = "48" radius="0.3" length="1"
     ixx="5.08" ixy="0" ixz="0" iyy="5.08" izz="2.16" iyz="0"
-    radius="0.3" length="1"/>
+    material="Rust" />
 
     <!-- Łokieć, rotacja -->
     <xacro:x_joint name="Arm_02" type="revolute"
@@ -99,9 +101,9 @@
 
     <xacro:x_link_ball name="${l04}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
-    mass = "15"
+    mass = "15" radius="0.3"
     ixx="0.54" ixy="0" ixz="0" iyy="0.54" izz="0.54" iyz="0"
-    radius="0.3"/>
+    material="Rust" />
 
     <!-- Łokieć, zgięcie-->
     <xacro:x_joint name="Arm_03" type="revolute"
@@ -122,9 +124,9 @@
 
     <xacro:x_link_cylinder name="${l05}"
     origin_xyz="0 0 -0.4" origin_rpy="0 0 0"
-    mass = "48"
+    mass = "48" radius="0.25" length="0.75"
     ixx="3" ixy="0" ixz="0" iyy="3" izz="2.25" iyz="0"
-    radius="0.25" length="0.75"/>
+    material="Rust" />
 
     <!-- Nadgarstek, góra dół -->
     <xacro:x_joint name="Wrist" type="revolute"
@@ -145,9 +147,9 @@
 
     <xacro:x_link_ball name="${l06}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
-    mass = "15"
+    mass = "15" radius="0.20"
     ixx="0.24" ixy="0" ixz="0" iyy="0.24" izz="0.24" iyz="0"
-    radius="0.20"/>
+    material="Rust" />
 
     <!-- Nadgarstek, rotacyjny -->
     <xacro:x_joint name="Hand" type="revolute"
@@ -168,9 +170,9 @@
 
     <xacro:x_link_box name="${l07}"
     origin_xyz="0 0 -0.1"  origin_rpy="0 0 0"
-    mass = "24"
+    mass = "24" size="0.3 0.2 0.4"
     ixx="0.5" ixy="0" ixz="0" iyy="0.26" izz="1.36" iyz="0"
-    size="0.3 0.2 0.4"/> 
+    material="Rust" /> 
 
      <!-- Palec wskazujący A -->
     <xacro:x_joint name="Finger_01_A" type="revolute"
@@ -191,9 +193,9 @@
 
     <xacro:x_link_box name="${l08}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
-    mass = "4"
+    mass = "4" size="0.1 0.05 0.2"
     ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
-    size="0.1 0.05 0.2"/>
+    material="Rust" />
 
 <!-- Palec wskazujący B -->
 
@@ -215,9 +217,9 @@
 
     <xacro:x_link_box name="${l11}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
-    mass = "4"
+    mass = "4" size="0.1 0.05 0.2"
     ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
-    size="0.1 0.05 0.2"/> 
+    material="Rust" /> 
 
    <!--  Palec serdeczny A -->
     <xacro:x_joint name="Finger_02_A" type="revolute"
@@ -238,9 +240,9 @@
 
     <xacro:x_link_box name="${l09}"
     origin_xyz="-0.17 0 -0.1" origin_rpy="0 0 0"
-    mass = "4"
-    ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
-    size="0.1 0.05 0.2"/>
+    mass = "4"  size="0.1 0.05 0.2"
+    ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"   
+    material="Rust" />
 
      <!-- Palec serdeczny B --> 
     <xacro:x_joint name="Finger_02_B" type="revolute"
@@ -261,9 +263,9 @@
 
     <xacro:x_link_box name="${l12}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
-    mass = "4"
+    mass = "4" size="0.1 0.05 0.2"
     ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
-    size="0.1 0.05 0.2"/>
+    material="Rust" />
     
 
     <!--  Palec kciuk A -->
@@ -285,9 +287,9 @@
 
     <xacro:x_link_box name="${l10}"
     origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
-    mass = "4"
+    mass = "4"  size="0.1 0.05 0.2"
     ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
-    size="0.1 0.05 0.2"/>
+    material="Rust" />
 
      <!-- Palec kciuk B -->
     <xacro:x_joint name="Finger_03_B" type="revolute"
@@ -308,9 +310,9 @@
 
     <xacro:x_link_box name="${l13}"
     origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
-    mass = "4"
+    mass = "4" size="0.1 0.05 0.2"
     ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
-    size="0.1 0.05 0.2"/> 
+    material="Rust" /> 
 
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">

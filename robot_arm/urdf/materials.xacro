@@ -1,0 +1,197 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+    
+    <!-- Kolory z URDF -->
+    <material name="Rust">
+        <color rgba="${82/255} ${13/255} ${0/255} 1.0"/>
+    </material>
+
+    <!-- Kolory z SDF -->
+    <gazebo reference="base_link">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_01">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_02">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_03">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_04">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_05">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_06">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_07">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_08">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_09">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_10">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_11">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_12">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_13">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_14">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_15">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+    <gazebo reference="link_16">  
+        <visual>  
+          <material>    
+            <ambient>0.322 0.051 0.0 1.0</ambient>
+            <diffuse>0.322 0.051 0.0 1.0</diffuse>
+            <specular>0.322 0.051 0.0 1.0</specular>
+            <emissive>0.322 0.051 0.0 1.0</emissive> 
+          </material>  
+        </visual>  
+    </gazebo>
+
+</robot>

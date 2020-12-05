@@ -12,7 +12,7 @@
     </xacro:macro>
     
 
-    <xacro:macro name="x_link_cylinder" params="name origin_xyz origin_rpy radius length mass ixx ixy ixz iyy iyz izz">
+    <xacro:macro name="x_link_cylinder" params="name origin_xyz origin_rpy radius length mass ixx ixy ixz iyy iyz izz material">
         <link name="${name}">
             <inertial>
                 <mass value="${mass}"/>
@@ -30,13 +30,14 @@
                 <geometry>
                     <cylinder radius="${radius}" length="${length}"/>
                 </geometry>
+                <material name="${material}"/>
             </visual>
         </link>
         
     </xacro:macro>
     
 
-    <xacro:macro name="x_link_box" params="name origin_xyz origin_rpy size mass ixx ixy ixz iyy iyz izz">
+    <xacro:macro name="x_link_box" params="name origin_xyz origin_rpy size mass ixx ixy ixz iyy iyz izz material">
         <link name="${name}">
             <inertial>
                 <mass value="${mass}"/>
@@ -54,12 +55,13 @@
                 <geometry>
                     <box size="${size}"/>
                 </geometry>
+                <material name="${material}"/>
             </visual>
         </link>
     </xacro:macro>
     
 
-    <xacro:macro name="x_link_ball" params="name origin_xyz origin_rpy radius mass ixx ixy ixz iyy iyz izz">
+    <xacro:macro name="x_link_ball" params="name origin_xyz origin_rpy radius mass ixx ixy ixz iyy iyz izz material">
         <link name="${name}">
             <inertial>
                 <mass value="${mass}"/>
@@ -77,6 +79,7 @@
                 <geometry>
                     <sphere radius="${radius}"/>
                 </geometry>
+                <material name="${material}"/>
             </visual>
         </link>
     </xacro:macro>
