@@ -2,11 +2,13 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     
     <!-- Kolory z URDF -->
+<!--================================================================================-->
     <material name="Rust">
         <color rgba="${82/255} ${13/255} ${0/255} 1.0"/>
     </material>
 
     <!-- Kolory z SDF -->
+<!--================================================================================-->
     <gazebo reference="base_link">  
         <visual>  
           <material>    

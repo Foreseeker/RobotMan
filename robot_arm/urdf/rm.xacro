@@ -6,6 +6,7 @@
     <xacro:include filename="$(find robot_arm)/urdf/materials.xacro"/>
 
     <!-- Baza -->
+<!--================================================================================-->
     <xacro:x_link_box name="${l00}"
     origin_xyz="0 0 0"  origin_rpy="0 0 0"
     mass = "2400" size="2 2 6"
@@ -14,6 +15,7 @@
     />   
 
     <!-- Barka, przód tył -->
+<!--================================================================================-->
     <xacro:x_joint name="Shoulder_01" type="revolute"
     axis="0 1 0"    limit_low="0.87"   limit_up="-2.97" limit_eff="1000"  limit_vel="0.5"
     origin_xyz="0 0 2"    origin_rpy="0 0 0"
@@ -37,6 +39,7 @@
     material="Rust" /> 
 
     <!-- Bark, od siebie do siebie -->
+<!--================================================================================-->
     <xacro:x_joint name="Shoulder_02" type="revolute"
     axis="1 0 0"    limit_low="-0.35"   limit_up="1.6" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 1.5 -0.5"    origin_rpy="0 0 0"
@@ -60,6 +63,7 @@
     material="Rust" />
 
     <!-- Ramię, martwy joint -->
+<!--================================================================================-->
     <xacro:x_joint name="Arm_01" type="revolute"
     axis="0 0 1"    limit_low="0"   limit_up="0" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
@@ -83,6 +87,7 @@
     material="Rust" />
 
     <!-- Łokieć, rotacja -->
+<!--================================================================================-->
     <xacro:x_joint name="Arm_02" type="revolute"
     axis="0 0 1"    limit_low="-1.6"   limit_up="1.60" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
@@ -106,6 +111,7 @@
     material="Rust" />
 
     <!-- Łokieć, zgięcie-->
+<!--================================================================================-->
     <xacro:x_joint name="Arm_03" type="revolute"
     axis="0 1 0"    limit_low="0"   limit_up="-2.62" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 0"    origin_rpy="0 0 0"
@@ -129,6 +135,7 @@
     material="Rust" />
 
     <!-- Nadgarstek, góra dół -->
+<!--================================================================================-->
     <xacro:x_joint name="Wrist" type="revolute"
     axis="1 0 0"    limit_low="-1.05"   limit_up="0.87" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.80"    origin_rpy="0 0 0"
@@ -152,6 +159,7 @@
     material="Rust" />
 
     <!-- Nadgarstek, rotacyjny -->
+<!--================================================================================-->
     <xacro:x_joint name="Hand" type="revolute"
     axis="0 0 1"    limit_low="-1.62"   limit_up="1.52" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.1"    origin_rpy="0 0 0"
@@ -175,6 +183,7 @@
     material="Rust" /> 
 
      <!-- Palec wskazujący A -->
+<!--================================================================================-->
     <xacro:x_joint name="Finger_01_A" type="revolute"
     axis="1 0 0"    limit_low="-1.57"   limit_up="0.52" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
@@ -197,8 +206,8 @@
     ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
     material="Rust" />
 
-<!-- Palec wskazujący B -->
-
+    <!-- Palec wskazujący B -->
+<!--================================================================================-->
     <xacro:x_joint name="Finger_01_B" type="revolute"
     axis="1 0 0"    limit_low="-2.27"   limit_up="0" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
@@ -222,6 +231,7 @@
     material="Rust" /> 
 
    <!--  Palec serdeczny A -->
+<!--================================================================================-->
     <xacro:x_joint name="Finger_02_A" type="revolute"
     axis="1 0 0"    limit_low="-1.57"   limit_up="0.52" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
@@ -245,6 +255,7 @@
     material="Rust" />
 
      <!-- Palec serdeczny B --> 
+<!--================================================================================-->
     <xacro:x_joint name="Finger_02_B" type="revolute"
     axis="1 0 0"    limit_low="-2.27"   limit_up="0" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="-0.17 0 -0.2"    origin_rpy="0 0 0"
@@ -269,6 +280,7 @@
     
 
     <!--  Palec kciuk A -->
+<!--================================================================================-->
     <xacro:x_joint name="Finger_03_A" type="revolute"
     axis="1 0 0"    limit_low="-0.52"   limit_up="1.57" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 -0.06 -0.3"    origin_rpy="0 0 0"
@@ -292,6 +304,7 @@
     material="Rust" />
 
      <!-- Palec kciuk B -->
+<!--================================================================================-->
     <xacro:x_joint name="Finger_03_B" type="revolute"
     axis="1 0 0"    limit_low="0"   limit_up="1.6" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
@@ -314,6 +327,8 @@
     ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
     material="Rust" /> 
 
+    <!-- Plugin -->
+<!--================================================================================-->
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
             <robotNamespace>/rm</robotNamespace>

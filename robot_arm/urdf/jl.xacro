@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
     
+    <!-- Staw -->
+<!--================================================================================-->
     <xacro:macro name="x_joint" params="name type axis origin_rpy origin_xyz parent child limit_low limit_up limit_eff limit_vel">
         <joint name="${name}" type="${type}">
             <axis xyz="${axis}"/>
@@ -11,7 +13,8 @@
         </joint>
     </xacro:macro>
     
-
+    <!-- Cylinder -->
+<!--================================================================================-->
     <xacro:macro name="x_link_cylinder" params="name origin_xyz origin_rpy radius length mass ixx ixy ixz iyy iyz izz material">
         <link name="${name}">
             <inertial>
@@ -32,11 +35,11 @@
                 </geometry>
                 <material name="${material}"/>
             </visual>
-        </link>
-        
+        </link>       
     </xacro:macro>
     
-
+    <!-- Prostopadłościan -->
+<!--================================================================================-->
     <xacro:macro name="x_link_box" params="name origin_xyz origin_rpy size mass ixx ixy ixz iyy iyz izz material">
         <link name="${name}">
             <inertial>
@@ -60,7 +63,8 @@
         </link>
     </xacro:macro>
     
-
+    <!-- Sfera -->
+<!--================================================================================-->
     <xacro:macro name="x_link_ball" params="name origin_xyz origin_rpy radius mass ixx ixy ixz iyy iyz izz material">
         <link name="${name}">
             <inertial>
