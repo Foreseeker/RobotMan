@@ -11,8 +11,9 @@
     ixx="8000" ixy="0" ixz="0" iyy="1600" izz="8000" iyz="0"
     size="2 2 6"/>   
 
+    <!-- Barka, przód tył -->
     <xacro:x_joint name="Shoulder_01" type="revolute"
-    axis="0 1 0"    limit_low="-1.82"   limit_up="3.14" limit_eff="10000"  limit_vel="0.5"
+    axis="0 1 0"    limit_low="0.87"   limit_up="-2.97" limit_eff="10000"  limit_vel="0.5"
     origin_xyz="0 0 2"    origin_rpy="0 0 0"
     parent="${l00}"  child="${l01}"/>
 
@@ -33,6 +34,7 @@
     ixx="32" ixy="0" ixz="0" iyy="32" izz="32" iyz="0"
     size="1 1 1"/> 
 
+    <!-- Bark, od siebie do siebie -->
     <xacro:x_joint name="Shoulder_02" type="revolute"
     axis="1 0 0"    limit_low="-0.35"   limit_up="1.6" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 1.5 -0.5"    origin_rpy="0 0 0"
@@ -55,6 +57,7 @@
     ixx="0.2" ixy="0" ixz="0" iyy="0.2" izz="0.2" iyz="0"
     radius="0.4"/>
 
+    <!-- Ramię, martwy joint -->
     <xacro:x_joint name="Arm_01" type="revolute"
     axis="0 0 1"    limit_low="0"   limit_up="0" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
@@ -77,7 +80,7 @@
     ixx="5.08" ixy="0" ixz="0" iyy="5.08" izz="2.16" iyz="0"
     radius="0.3" length="1"/>
 
-   
+    <!-- Łokieć, rotacja -->
     <xacro:x_joint name="Arm_02" type="revolute"
     axis="0 0 1"    limit_low="-1.6"   limit_up="1.60" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
@@ -100,8 +103,9 @@
     ixx="0.54" ixy="0" ixz="0" iyy="0.54" izz="0.54" iyz="0"
     radius="0.3"/>
 
+    <!-- Łokieć, zgięcie-->
     <xacro:x_joint name="Arm_03" type="revolute"
-    axis="0 1 0"    limit_low="0"   limit_up="2.38" limit_eff="1000"    limit_vel="0.5"
+    axis="0 1 0"    limit_low="0"   limit_up="-2.62" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 0"    origin_rpy="0 0 0"
     parent="${l04}"  child="${l05}"/>
 
@@ -122,9 +126,9 @@
     ixx="3" ixy="0" ixz="0" iyy="3" izz="2.25" iyz="0"
     radius="0.25" length="0.75"/>
 
-    
+    <!-- Nadgarstek, góra dół -->
     <xacro:x_joint name="Wrist" type="revolute"
-    axis="1 0 0"    limit_low="-1.6"   limit_up="1.6" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-1.05"   limit_up="0.87" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.80"    origin_rpy="0 0 0"
     parent="${l05}"  child="${l06}"/>
 
@@ -145,6 +149,7 @@
     ixx="0.24" ixy="0" ixz="0" iyy="0.24" izz="0.24" iyz="0"
     radius="0.20"/>
 
+    <!-- Nadgarstek, rotacyjny -->
     <xacro:x_joint name="Hand" type="revolute"
     axis="0 0 1"    limit_low="-1.62"   limit_up="1.52" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.1"    origin_rpy="0 0 0"
@@ -167,11 +172,9 @@
     ixx="0.5" ixy="0" ixz="0" iyy="0.26" izz="1.36" iyz="0"
     size="0.3 0.2 0.4"/> 
 
-
-
-     <!--Index FINGER A -->
+     <!-- Palec wskazujący A -->
     <xacro:x_joint name="Finger_01_A" type="revolute"
-    axis="1 0 0"    limit_low="-1.4"   limit_up="1.08" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-1.57"   limit_up="0.52" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l08}"/>
 
@@ -192,8 +195,7 @@
     ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
     size="0.1 0.05 0.2"/>
 
-<!--
-     FINGER 1 B -->
+<!-- Palec wskazujący B -->
 
     <xacro:x_joint name="Finger_01_B" type="revolute"
     axis="1 0 0"    limit_low="-2.27"   limit_up="0" limit_eff="1000"    limit_vel="0.5"
@@ -217,9 +219,9 @@
     ixx="0.15" ixy="0" ixz="0" iyy="0.0375" izz="0.1275" iyz="0"
     size="0.1 0.05 0.2"/> 
 
-   <!--  FINGER 2 A -->
+   <!--  Palec serdeczny A -->
     <xacro:x_joint name="Finger_02_A" type="revolute"
-    axis="1 0 0"    limit_low="-1.4"   limit_up="1.08" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-1.57"   limit_up="0.52" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l09}"/>
 
@@ -240,7 +242,7 @@
     ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
     size="0.1 0.05 0.2"/>
 
-     <!-- FINGER 2 B --> 
+     <!-- Palec serdeczny B --> 
     <xacro:x_joint name="Finger_02_B" type="revolute"
     axis="1 0 0"    limit_low="-2.27"   limit_up="0" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="-0.17 0 -0.2"    origin_rpy="0 0 0"
@@ -264,9 +266,9 @@
     size="0.1 0.05 0.2"/>
     
 
-    <!--  FINGER 3 A -->
+    <!--  Palec kciuk A -->
     <xacro:x_joint name="Finger_03_A" type="revolute"
-    axis="1 0 0"    limit_low="-1.05"   limit_up="1.23" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-0.52"   limit_up="1.57" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 -0.06 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l10}"/>
 
@@ -287,7 +289,7 @@
     ixx="0.17" ixy="0" ixz="0" iyy="0.00417" izz="0.0542" iyz="0"
     size="0.1 0.05 0.2"/>
 
-     <!-- FINGER 3 B -->
+     <!-- Palec kciuk B -->
     <xacro:x_joint name="Finger_03_B" type="revolute"
     axis="1 0 0"    limit_low="0"   limit_up="1.6" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
