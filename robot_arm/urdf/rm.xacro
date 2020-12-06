@@ -83,7 +83,7 @@
     <xacro:x_link_cylinder name="${l03}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
     mass = "48" radius="0.3" length="1"
-    ixx="0.11" ixy="0" ixz="0" iyy="0.11" izz="2.16" iyz="0"
+    ixx="5.08" ixy="0" ixz="0" iyy="5.08" izz="2.16" iyz="0"
     material="Rust" />
 
     <!-- Łokieć, rotacja -->
@@ -203,7 +203,7 @@
     <xacro:x_link_box name="${l08}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
     mass = "4" size="0.1 0.05 0.2"
-    ixx="1.344" ixy="0" ixz="0" iyy="0.0142" izz="0.017" iyz="0"
+    ixx="0.0142" ixy="0" ixz="0" iyy="0.017" izz="0.0042" iyz="0"
     material="Rust" />
 
     <!-- Palec wskazujący B -->
@@ -227,7 +227,7 @@
     <xacro:x_link_box name="${l11}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
     mass = "4" size="0.1 0.05 0.2"
-    ixx="1.344" ixy="0" ixz="0" iyy="0.0142" izz="0.017" iyz="0"
+    ixx="0.0142" ixy="0" ixz="0" iyy="0.017" izz="0.0042" iyz="0"
     material="Rust" /> 
 
    <!--  Palec serdeczny A -->
@@ -251,7 +251,7 @@
     <xacro:x_link_box name="${l09}"
     origin_xyz="-0.17 0 -0.1" origin_rpy="0 0 0"
     mass = "4"  size="0.1 0.05 0.2"
-    ixx="1.344" ixy="0" ixz="0" iyy="0.0142" izz="0.017" iyz="0" 
+    ixx="0.0142" ixy="0" ixz="0" iyy="0.017" izz="0.0042" iyz="0"
     material="Rust" />
 
      <!-- Palec serdeczny B --> 
@@ -275,14 +275,14 @@
     <xacro:x_link_box name="${l12}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
     mass = "4" size="0.1 0.05 0.2"
-    ixx="1.344" ixy="0" ixz="0" iyy="0.0142" izz="0.017" iyz="0"
+    ixx="0.0142" ixy="0" ixz="0" iyy="0.017" izz="0.0042" iyz="0"
     material="Rust" />
     
 
     <!--  Palec kciuk A -->
 <!--================================================================================-->
     <xacro:x_joint name="Finger_03_A" type="revolute"
-    axis="1 0 0"    limit_low="-0.52"   limit_up="1.57" limit_eff="1000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-0.7"   limit_up="1.57" limit_eff="1000"    limit_vel="0.5"
     origin_xyz="0.08 -0.06 -0.3"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l10}"/>
 
@@ -300,7 +300,7 @@
     <xacro:x_link_box name="${l10}"
     origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
     mass = "4"  size="0.1 0.05 0.2"
-    ixx="1.344" ixy="0" ixz="0" iyy="0.0142" izz="0.017" iyz="0"
+    ixx="0.0142" ixy="0" ixz="0" iyy="0.017" izz="0.0042" iyz="0"
     material="Rust" />
 
      <!-- Palec kciuk B -->
@@ -324,7 +324,7 @@
     <xacro:x_link_box name="${l13}"
     origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
     mass = "4" size="0.1 0.05 0.2"
-    ixx="1.344" ixy="0" ixz="0" iyy="0.0142" izz="0.017" iyz="0"
+    ixx="0.0142" ixy="0" ixz="0" iyy="0.017" izz="0.0042" iyz="0"
     material="Rust" /> 
 
     <!-- Plugin -->
