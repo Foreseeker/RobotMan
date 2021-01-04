@@ -6,70 +6,71 @@ joint_state_controller:
 joint1_position_controller:
   type: effort_controllers/JointPositionController
   joint: Shoulder_01
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 50000.0, i: 20.0, d: 480.0}
 
 #Pozycja barku, lewo prawo - ustawiono
 joint2_position_controller:
   type: effort_controllers/JointPositionController
   joint: Shoulder_02
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 50000.0, i: 140.0, d: 540.0}
+
 #Martwy joint - bez ustawienia
 joint3_position_controller:
   type: effort_controllers/JointPositionController
   joint: Arm_01
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 0.0, i: 0.0, d: 0.0}
 
 #Łokieć, rotacja - ustawione
 joint4_position_controller:
   type: effort_controllers/JointPositionController
   joint: Arm_02
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 18000.0, i: 20.0, d: 800.0}
 
 #Łokieć, góra dół - ustawione
 joint5_position_controller:
   type: effort_controllers/JointPositionController
   joint: Arm_03
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 2000.0, i: 100.0, d: 340.0}
 
 #Nadgarstek, zgięcie - ustawione
 joint6_position_controller:
   type: effort_controllers/JointPositionController
   joint: Wrist
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 50000.0, i: 120.0, d: 0.0}
 
 #Nadgarstek, rotacja - ustawione
 joint7_position_controller:
   type: effort_controllers/JointPositionController
   joint: Hand
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 6000.0, i: 380.0, d: 540.0}
 
 #Palec wskazujący, część A - ustawione
 joint8_position_controller:
   type: effort_controllers/JointPositionController
   joint: Finger_01_A
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 2000.0, i: 60.0, d: 200.0}
 
 joint9_position_controller:
   type: effort_controllers/JointPositionController
   joint: Finger_01_B
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 2000.0, i: 60.0, d: 200.0}
 
 joint10_position_controller:
   type: effort_controllers/JointPositionController
   joint: Finger_02_A
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 2000.0, i: 60.0, d: 200.0}
 
 joint11_position_controller:
   type: effort_controllers/JointPositionController
   joint: Finger_02_B
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 2000.0, i: 60.0, d: 200.0}
 
 joint12_position_controller:
   type: effort_controllers/JointPositionController
   joint: Finger_03_A
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 2000.0, i: 60.0, d: 200.0}
 
 joint13_position_controller:
   type: effort_controllers/JointPositionController
   joint: Finger_03_B
-  pid: {p: 1.0, i: 0.0, d: 0.0}
+  pid: {p: 2000.0, i: 60.0, d: 200.0}
