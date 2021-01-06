@@ -17,7 +17,7 @@
     <!-- Barka, przód tył -->
 <!--================================================================================-->
     <xacro:x_joint name="Shoulder_01" type="revolute"
-    axis="0 1 0"    limit_low="-2.97"   limit_up="0.87" limit_eff="10000"  limit_vel="0.5"
+    axis="0 1 0"    limit_low="-2.97"   limit_up="0.87" limit_eff="20000"  limit_vel="1"
     origin_xyz="0 0 2"    origin_rpy="0 0 0"
     parent="${l00}"  child="${l01}"/>
 
@@ -35,13 +35,13 @@
     <xacro:x_link_box name="${l01}"
     origin_xyz="0 1.5 0"  origin_rpy="0 0 0"
     mass = "192" size="1 1 1"
-    ixx="32" iyy="32" izz="32" iyz="0" ixy="0" ixz="0"
+    ixx="16" iyy="16" izz="16" iyz="0" ixy="0" ixz="0"
     material="Rust" /> 
 
     <!-- Barka, od siebie do siebie -->
 <!--================================================================================-->
     <xacro:x_joint name="Shoulder_02" type="revolute"
-    axis="1 0 0"    limit_low="-0.35"   limit_up="1.6" limit_eff="10000"    limit_vel="0.5"
+    axis="1 0 0"    limit_low="-0.35"   limit_up="1.6" limit_eff="20000"    limit_vel="1"
     origin_xyz="0 1.5 -0.5"    origin_rpy="0 0 0"
     parent="${l01}"  child="${l02}"/>
 
@@ -59,7 +59,7 @@
     <xacro:x_link_ball name="${l02}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
     mass = "40" radius="0.4"
-    ixx="2.56" iyy="2.56" izz="2.56" iyz="0"  ixy="0" ixz="0"
+    ixx="1.28" iyy="1.28" izz="1.28" iyz="0"  ixy="0" ixz="0"
     material="Rust" />
 
     <!-- Ramię, martwy joint -->
@@ -83,7 +83,7 @@
     <xacro:x_link_cylinder name="${l03}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
     mass = "48" radius="0.3" length="1"
-    ixx="53.08" iyy="53.08" izz="2.16" iyz="0"  ixy="0" ixz="0"
+    ixx="17.7" iyy="17.7" izz="1.08" iyz="0"  ixy="0" ixz="0"
     material="Rust" />
 
     <!-- Łokieć, rotacja -->
@@ -113,7 +113,7 @@
     <!-- Łokieć, zgięcie-->
 <!--================================================================================-->
     <xacro:x_joint name="Arm_03" type="revolute"
-    axis="0 1 0"    limit_low="-2.62"   limit_up="0" limit_eff="10000"    limit_vel="0.5"
+    axis="0 1 0"    limit_low="-2.62"   limit_up="0" limit_eff="20000"    limit_vel="1"
     origin_xyz="0 0 0"    origin_rpy="0 0 0"
     parent="${l04}"  child="${l05}"/>
 
@@ -131,7 +131,7 @@
     <xacro:x_link_cylinder name="${l05}"
     origin_xyz="0 0 -0.4" origin_rpy="0 0 0"
     mass = "48" radius="0.25" length="0.75"
-    ixx="30" iyy="30" izz="1.5" iyz="0" ixy="0" ixz="0"
+    ixx="10" iyy="10" izz="1.5" iyz="0" ixy="0" ixz="0"
     material="Rust" />
 
     <!-- Nadgarstek, góra dół -->

@@ -6,48 +6,47 @@ from std_msgs.msg import Float64
 
 def shoulder_1():
     pub = rospy.Publisher('/rm/joint1_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('shoulder_1',anonymous=True)
+    rospy.init_node('Py_Shoulder_01',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
-        position = math.pi
+        position = -(math.pi)/2
         rospy.loginfo(position)
         pub.publish(position)
         rate.sleep()
 
 def shoulder_2():
     pub = rospy.Publisher('/rm/joint2_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('shoulder_2',anonymous=True)
+    rospy.init_node('Py_Shoulder_2',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
-        position = math.pi
+        position = 1
         rospy.loginfo(position)
         pub.publish(position)
         rate.sleep()
 
-def arm_1():
+""" def arm_1():
     pub = rospy.Publisher('/rm/joint3_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('arm_1',anonymous=True)
+    rospy.init_node('Py_Arm_01',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
         position = math.pi
         rospy.loginfo(position)
         pub.publish(position)
-        rate.sleep()
+        rate.sleep() """
 
 def arm_2():
     pub = rospy.Publisher('/rm/joint4_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('arm_2',anonymous=True)
+    rospy.init_node('Py_Arm_02',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
-        position = math.pi
+        position = -1
         rospy.loginfo(position)
         pub.publish(position)
         rate.sleep()
 
-
 def arm_3():
     pub = rospy.Publisher('/rm/joint5_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('arm_3',anonymous=True)
+    rospy.init_node('Py_Arm_03',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
         position = math.pi
@@ -57,7 +56,7 @@ def arm_3():
 
 def wrist():
     pub = rospy.Publisher('/rm/joint6_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('wrist',anonymous=True)
+    rospy.init_node('Py_Wrist',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
         position = math.pi
@@ -67,7 +66,7 @@ def wrist():
 
 def hand():
     pub = rospy.Publisher('/rm/joint7_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('hand',anonymous=True)
+    rospy.init_node('Py_Hand',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
         position = math.pi
@@ -77,7 +76,7 @@ def hand():
 
 def finger_1_a():
     pub = rospy.Publisher('/rm/joint8_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('finger_1_a',anonymous=True)
+    rospy.init_node('Py_Finger_01_A',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
         position = math.pi
@@ -87,7 +86,7 @@ def finger_1_a():
 
 def finger_1_b():
     pub = rospy.Publisher('/rm/joint9_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('finger_1_b',anonymous=True)
+    rospy.init_node('Py_Finger_01_B',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
         position = math.pi
@@ -97,7 +96,7 @@ def finger_1_b():
 
 def finger_2_a():
     pub = rospy.Publisher('/rm/joint10_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('finger_2_a',anonymous=True)
+    rospy.init_node('Py_Finger_02_A',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
         position = math.pi
@@ -107,7 +106,7 @@ def finger_2_a():
 
 def finger_2_b():
     pub = rospy.Publisher('/rm/joint11_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('finger_2_b',anonymous=True)
+    rospy.init_node('Py_Finger_02_B',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
         position = math.pi
@@ -117,7 +116,7 @@ def finger_2_b():
 
 def finger_3_a():
     pub = rospy.Publisher('/rm/joint12_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('finger_3_a',anonymous=True)
+    rospy.init_node('Py_Finger_03_A',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
         position = math.pi
@@ -127,7 +126,7 @@ def finger_3_a():
 
 def finger_3_b():
     pub = rospy.Publisher('/rm/joint13_position_controller/command',Float64, queue_size=10)
-    rospy.init_node('finger_3_b',anonymous=True)
+    rospy.init_node('Py_Finger_03_B',anonymous=True)
     rate = rospy.Rate(10)
     while not rospy.is_shutdown():
         position = math.pi
