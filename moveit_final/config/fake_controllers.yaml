@@ -1,0 +1,23 @@
+controller_list:
+  - name: fake_arm_controller
+    joints:
+      - Shoulder_01
+      - Shoulder_02
+      - Arm_01
+      - Arm_02
+      - Arm_03
+      - Wrist
+  - name: fake_hand_controller
+    joints:
+      - Hand
+      - Finger_01_A
+      - Finger_01_B
+      - Finger_02_A
+      - Finger_02_B
+      - Finger_03_A
+      - Finger_03_B
+initial:  # Define initial robot poses.
+  - group: arm
+    pose: armRest
+  - group: hand
+    pose: handRest

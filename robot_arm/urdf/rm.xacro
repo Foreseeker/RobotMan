@@ -8,7 +8,7 @@
     <!-- Baza -->
 <!--================================================================================-->
     <xacro:x_link_box name="${l00}"
-    origin_xyz="0 0 0"  origin_rpy="0 0 0"
+    origin_xyz="0 0 1"  origin_rpy="0 0 0"
     mass = "4800" size="2 2 6"
     ixx="16000" iyy="16000" izz="3200" iyz="0" ixy="0" ixz="0"
     material="Rust" 
@@ -17,8 +17,8 @@
     <!-- Barka, przód tył -->
 <!--================================================================================-->
     <xacro:x_joint name="Shoulder_01" type="revolute"
-    axis="0 1 0"    limit_low="-2.97"   limit_up="0.87" limit_eff="20000"  limit_vel="1"
-    origin_xyz="0 0 2"    origin_rpy="0 0 0"
+    axis="0 1 0"    limit_low="-2.97"   limit_up="0.87" limit_eff="30000"  limit_vel="1"
+    origin_xyz="0 0 3"    origin_rpy="0 0 0"
     parent="${l00}"  child="${l01}"/>
 
     <transmission name="trans_Shoulder_01">
@@ -34,15 +34,15 @@
 
     <xacro:x_link_box name="${l01}"
     origin_xyz="0 1.5 0"  origin_rpy="0 0 0"
-    mass = "192" size="1 1 1"
+    mass = "192" size="1 0.98 1"
     ixx="16" iyy="16" izz="16" iyz="0" ixy="0" ixz="0"
     material="Rust" /> 
 
     <!-- Barka, od siebie do siebie -->
 <!--================================================================================-->
     <xacro:x_joint name="Shoulder_02" type="revolute"
-    axis="1 0 0"    limit_low="-0.35"   limit_up="1.6" limit_eff="20000"    limit_vel="1"
-    origin_xyz="0 1.5 -0.5"    origin_rpy="0 0 0"
+    axis="1 0 0"    limit_low="-0.35"   limit_up="1.6" limit_eff="30000"    limit_vel="1"
+    origin_xyz="0 2 -0.5"    origin_rpy="0 0 0"
     parent="${l01}"  child="${l02}"/>
 
     <transmission name="trans_Shoulder_02">
@@ -66,7 +66,7 @@
 <!--================================================================================-->
     <xacro:x_joint name="Arm_01" type="revolute"
     axis="0 0 1"    limit_low="0"   limit_up="0" limit_eff="10000"    limit_vel="0.5"
-    origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
+    origin_xyz="0 0 -0.55"    origin_rpy="0 0 0"
     parent="${l02}"  child="${l03}"/>
 
     <transmission name="trans_Arm_01">
@@ -82,7 +82,7 @@
 
     <xacro:x_link_cylinder name="${l03}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
-    mass = "48" radius="0.3" length="1"
+    mass = "48" radius="0.25" length="1"
     ixx="17.7" iyy="17.7" izz="1.08" iyz="0"  ixy="0" ixz="0"
     material="Rust" />
 
@@ -90,7 +90,7 @@
 <!--================================================================================-->
     <xacro:x_joint name="Arm_02" type="revolute"
     axis="0 0 1"    limit_low="-1.6"   limit_up="1.60" limit_eff="10000"    limit_vel="0.5"
-    origin_xyz="0 0 -0.5"    origin_rpy="0 0 0"
+    origin_xyz="0 0 -0.7"    origin_rpy="0 0 0"
     parent="${l03}"  child="${l04}"/>
 
     <transmission name="trans_Arm_02">
@@ -129,8 +129,8 @@
     </transmission>
 
     <xacro:x_link_cylinder name="${l05}"
-    origin_xyz="0 0 -0.4" origin_rpy="0 0 0"
-    mass = "48" radius="0.25" length="0.75"
+    origin_xyz="0 0 -0.6" origin_rpy="0 0 0"
+    mass = "48" radius="0.2" length="0.75"
     ixx="10" iyy="10" izz="1.5" iyz="0" ixy="0" ixz="0"
     material="Rust" />
 
@@ -138,7 +138,7 @@
 <!--================================================================================-->
     <xacro:x_joint name="Wrist" type="revolute"
     axis="1 0 0"    limit_low="-1.05"   limit_up="0.87" limit_eff="10000"    limit_vel="0.5"
-    origin_xyz="0 0 -0.80"    origin_rpy="0 0 0"
+    origin_xyz="0 0 -1"    origin_rpy="0 0 0"
     parent="${l05}"  child="${l06}"/>
 
     <transmission name="trans_Wrist">
@@ -153,7 +153,7 @@
     </transmission>
 
     <xacro:x_link_ball name="${l06}"
-    origin_xyz="0 0 0" origin_rpy="0 0 0"
+    origin_xyz="0 0 -0.05" origin_rpy="0 0 0"
     mass = "15" radius="0.20"
     ixx="0.24" iyy="0.24" izz="0.24" iyz="0" ixy="0" ixz="0"
     material="Rust" />
@@ -177,7 +177,7 @@
     </transmission>
 
     <xacro:x_link_box name="${l07}"
-    origin_xyz="0 0 -0.1"  origin_rpy="0 0 0"
+    origin_xyz="0 0 -0.25"  origin_rpy="0 0 0"
     mass = "24" size="0.3 0.2 0.4"
     ixx="0.5" iyy="0.26" izz="4.24" iyz="0"  ixy="0" ixz="0"
     material="Rust" /> 
