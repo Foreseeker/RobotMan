@@ -15,7 +15,7 @@
     
     <!-- Cylinder -->
 <!--================================================================================-->
-    <xacro:macro name="x_link_cylinder" params="name origin_xyz origin_rpy radius length mass ixx ixy ixz iyy iyz izz material">
+    <xacro:macro name="x_link_cylinder" params="name origin_xyz origin_rpy radius coll_rad length mass ixx ixy ixz iyy iyz izz material">
         <link name="${name}">
             <inertial>
                 <mass value="${mass}"/>
@@ -25,7 +25,7 @@
             <collision>
                 <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
                 <geometry>
-                    <cylinder radius="${radius}" length="${length}"/>
+                    <cylinder radius="${coll_rad}" length="${length}"/>
                 </geometry>
             </collision>
             <visual>
@@ -65,7 +65,7 @@
     
     <!-- Sfera -->
 <!--================================================================================-->
-    <xacro:macro name="x_link_ball" params="name origin_xyz origin_rpy radius mass ixx ixy ixz iyy iyz izz material">
+    <xacro:macro name="x_link_ball" params="name origin_xyz origin_rpy radius coll_rad mass ixx ixy ixz iyy iyz izz material">
         <link name="${name}">
             <inertial>
                 <mass value="${mass}"/>
@@ -75,7 +75,7 @@
             <collision>
                 <origin xyz="${origin_xyz}" rpy="${origin_rpy}"/>
                 <geometry>
-                    <sphere radius="0.1"/>
+                    <sphere radius="${coll_rad}"/>
                 </geometry>
             </collision>
             <visual>

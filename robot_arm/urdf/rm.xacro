@@ -17,7 +17,7 @@
     <!-- Barka, przód tył -->
 <!--================================================================================-->
     <xacro:x_joint name="Shoulder_01" type="revolute"
-    axis="0 1 0"    limit_low="-2.97"   limit_up="0.87" limit_eff="30000"  limit_vel="1"
+    axis="0 1 0"    limit_low="-2.97"   limit_up="0.87" limit_eff="20000"  limit_vel="0.5"
     origin_xyz="0 0 3"    origin_rpy="0 0 0"
     parent="${l00}"  child="${l01}"/>
 
@@ -34,14 +34,14 @@
 
     <xacro:x_link_box name="${l01}"
     origin_xyz="0 1.5 0"  origin_rpy="0 0 0"
-    mass = "192" size="1 0.98 1"
-    ixx="16" iyy="16" izz="16" iyz="0" ixy="0" ixz="0"
+    mass = "250" size="1 1 1"
+    ixx="42" iyy="42" izz="42" iyz="0" ixy="0" ixz="0"
     material="Rust" /> 
 
     <!-- Barka, od siebie do siebie -->
 <!--================================================================================-->
     <xacro:x_joint name="Shoulder_02" type="revolute"
-    axis="1 0 0"    limit_low="-0.35"   limit_up="1.6" limit_eff="30000"    limit_vel="1"
+    axis="1 0 0"    limit_low="-0.35"   limit_up="1.6" limit_eff="20000"    limit_vel="0.5"
     origin_xyz="0 2 -0.5"    origin_rpy="0 0 0"
     parent="${l01}"  child="${l02}"/>
 
@@ -58,8 +58,8 @@
 
     <xacro:x_link_ball name="${l02}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
-    mass = "40" radius="0.4"
-    ixx="1.28" iyy="1.28" izz="1.28" iyz="0"  ixy="0" ixz="0"
+    mass = "150" radius="0.4" coll_rad="0.13"
+    ixx="9.6" iyy="9.6" izz="9.6" iyz="0"  ixy="0" ixz="0"
     material="Rust" />
 
     <!-- Ramię, martwy joint -->
@@ -82,8 +82,8 @@
 
     <xacro:x_link_cylinder name="${l03}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
-    mass = "48" radius="0.25" length="1"
-    ixx="17.7" iyy="17.7" izz="1.08" iyz="0"  ixy="0" ixz="0"
+    mass = "120" radius="0.25" coll_rad="0.06" length="1"
+    ixx="10" iyy="10" izz="3.125" iyz="0"  ixy="0" ixz="0"
     material="Rust" />
 
     <!-- Łokieć, rotacja -->
@@ -106,14 +106,14 @@
 
     <xacro:x_link_ball name="${l04}"
     origin_xyz="0 0 0" origin_rpy="0 0 0"
-    mass = "15" radius="0.3"
-    ixx="0.54" iyy="0.54" izz="0.54" iyz="0" ixy="0" ixz="0"
+    mass = "40" radius="0.3" coll_rad="0.1"
+    ixx="1.44" iyy="1.44" izz="1.44" iyz="0" ixy="0" ixz="0"
     material="Rust" />
 
     <!-- Łokieć, zgięcie-->
 <!--================================================================================-->
     <xacro:x_joint name="Arm_03" type="revolute"
-    axis="0 1 0"    limit_low="-2.62"   limit_up="0" limit_eff="20000"    limit_vel="1"
+    axis="0 1 0"    limit_low="-2.62"   limit_up="0" limit_eff="20000"    limit_vel="0.5"
     origin_xyz="0 0 0"    origin_rpy="0 0 0"
     parent="${l04}"  child="${l05}"/>
 
@@ -130,8 +130,8 @@
 
     <xacro:x_link_cylinder name="${l05}"
     origin_xyz="0 0 -0.6" origin_rpy="0 0 0"
-    mass = "48" radius="0.2" length="0.75"
-    ixx="10" iyy="10" izz="1.5" iyz="0" ixy="0" ixz="0"
+    mass = "20" radius="0.17" coll_rad="0.04" length="0.75"
+    ixx="3" iyy="3" izz="0.5" iyz="0" ixy="0" ixz="0"
     material="Rust" />
 
     <!-- Nadgarstek, góra dół -->
@@ -154,8 +154,8 @@
 
     <xacro:x_link_ball name="${l06}"
     origin_xyz="0 0 -0.05" origin_rpy="0 0 0"
-    mass = "15" radius="0.20"
-    ixx="0.24" iyy="0.24" izz="0.24" iyz="0" ixy="0" ixz="0"
+    mass = "4" radius="0.20" coll_rad="0.06"
+    ixx="0.064" iyy="0.064" izz="0.064" iyz="0" ixy="0" ixz="0"
     material="Rust" />
 
     <!-- Nadgarstek, rotacyjny -->
@@ -178,15 +178,15 @@
 
     <xacro:x_link_box name="${l07}"
     origin_xyz="0 0 -0.25"  origin_rpy="0 0 0"
-    mass = "24" size="0.3 0.2 0.4"
-    ixx="0.5" iyy="0.26" izz="4.24" iyz="0"  ixy="0" ixz="0"
+    mass = "10" size="0.3 0.2 0.4"
+    ixx="0.21" iyy="0.11" izz="0.18" iyz="0"  ixy="0" ixz="0"
     material="Rust" /> 
 
      <!-- Palec wskazujący A -->
 <!--================================================================================-->
     <xacro:x_joint name="Finger_01_A" type="revolute"
     axis="1 0 0"    limit_low="-1.57"   limit_up="0.52" limit_eff="10000"    limit_vel="0.5"
-    origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
+    origin_xyz="0.08 0.08 -0.5"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l08}"/>
 
     <transmission name="trans_Finger_01_A">
@@ -203,14 +203,14 @@
     <xacro:x_link_box name="${l08}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
     mass = "4" size="0.1 0.05 0.2"
-    ixx="1.344" iyy="0.014" izz="0.02" iyz="0" ixy="0" ixz="0"
+    ixx="0" iyy="0" izz="0" iyz="0" ixy="0" ixz="0"
     material="Rust" />
 
     <!-- Palec wskazujący B -->
 <!--================================================================================-->
     <xacro:x_joint name="Finger_01_B" type="revolute"
     axis="1 0 0"    limit_low="-2.27"   limit_up="0" limit_eff="10000"    limit_vel="0.5"
-    origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
+    origin_xyz="0 0 -0.25"    origin_rpy="0 0 0"
     parent="${l08}"  child="${l11}"/>
 
     <transmission name="trans_Finger_01_B">
@@ -227,14 +227,14 @@
     <xacro:x_link_box name="${l11}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
     mass = "4" size="0.1 0.05 0.2"
-    ixx="1.344" iyy="0.014" izz="0.02" iyz="0" ixy="0" ixz="0"
+    ixx="0" iyy="0" izz="0" iyz="0" ixy="0" ixz="0"
     material="Rust" /> 
 
    <!--  Palec serdeczny A -->
 <!--================================================================================-->
     <xacro:x_joint name="Finger_02_A" type="revolute"
     axis="1 0 0"    limit_low="-1.57"   limit_up="0.52" limit_eff="10000"    limit_vel="0.5"
-    origin_xyz="0.08 0.08 -0.3"    origin_rpy="0 0 0"
+    origin_xyz="0.08 0.08 -0.5"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l09}"/>
 
     <transmission name="trans_Finger_02_A">
@@ -251,14 +251,14 @@
     <xacro:x_link_box name="${l09}"
     origin_xyz="-0.17 0 -0.1" origin_rpy="0 0 0"
     mass = "4"  size="0.1 0.05 0.2"
-    ixx="1.344" iyy="0.014" izz="0.02" iyz="0" ixy="0" ixz="0"
+    ixx="0" iyy="0" izz="0" iyz="0" ixy="0" ixz="0"
     material="Rust" />
 
      <!-- Palec serdeczny B --> 
 <!--================================================================================-->
     <xacro:x_joint name="Finger_02_B" type="revolute"
     axis="1 0 0"    limit_low="-2.27"   limit_up="0" limit_eff="10000"    limit_vel="0.5"
-    origin_xyz="-0.17 0 -0.2"    origin_rpy="0 0 0"
+    origin_xyz="-0.17 0 -0.25"    origin_rpy="0 0 0"
     parent="${l09}"  child="${l12}"/>
 
     <transmission name="trans_Finger_02_B">
@@ -275,7 +275,7 @@
     <xacro:x_link_box name="${l12}"
     origin_xyz="0 0 -0.1" origin_rpy="0 0 0"
     mass = "4" size="0.1 0.05 0.2"
-    ixx="1.344" iyy="0.014" izz="0.02" iyz="0" ixy="0" ixz="0"
+    ixx="0" iyy="0" izz="0" iyz="0" ixy="0" ixz="0"
     material="Rust" />
     
 
@@ -283,7 +283,7 @@
 <!--================================================================================-->
     <xacro:x_joint name="Finger_03_A" type="revolute"
     axis="1 0 0"    limit_low="-0.7"   limit_up="1.57" limit_eff="10000"    limit_vel="0.5"
-    origin_xyz="0.08 -0.06 -0.3"    origin_rpy="0 0 0"
+    origin_xyz="0.08 -0.06 -0.5"    origin_rpy="0 0 0"
     parent="${l07}"  child="${l10}"/>
 
     <transmission name="trans_Finger_03_A">
@@ -300,14 +300,14 @@
     <xacro:x_link_box name="${l10}"
     origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
     mass = "4"  size="0.1 0.05 0.2"
-    ixx="1.344" iyy="0.014" izz="0.02" iyz="0" ixy="0" ixz="0"
+    ixx="0" iyy="0" izz="0" iyz="0" ixy="0" ixz="0"
     material="Rust" />
 
      <!-- Palec kciuk B -->
 <!--================================================================================-->
     <xacro:x_joint name="Finger_03_B" type="revolute"
     axis="1 0 0"    limit_low="0"   limit_up="1.6" limit_eff="10000"    limit_vel="0.5"
-    origin_xyz="0 0 -0.2"    origin_rpy="0 0 0"
+    origin_xyz="0 0 -0.25"    origin_rpy="0 0 0"
     parent="${l10}"  child="${l13}"/>
 
     <transmission name="trans_Finger_03_B">
@@ -324,7 +324,7 @@
     <xacro:x_link_box name="${l13}"
     origin_xyz="-0.05 0 -0.1" origin_rpy="0 0 0"
     mass = "4" size="0.1 0.05 0.2"
-    ixx="1.344" iyy="0.014" izz="0.02" iyz="0" ixy="0" ixz="0"
+    ixx="0" iyy="0" izz="0" iyz="0" ixy="0" ixz="0"
     material="Rust" /> 
 
     <!-- Plugin -->
