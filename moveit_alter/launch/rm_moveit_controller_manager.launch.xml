@@ -3,13 +3,13 @@
   <arg name="moveit_controller_manager" default="moveit_simple_controller_manager/MoveItSimpleControllerManager" />
   <param name="moveit_controller_manager" value="$(arg moveit_controller_manager)"/>
 
-  <!-- loads ros_controllers to the param server -->
+  <!-- Loads ros_controllers to the param server -->
   <rosparam file="$(find moveit_alter)/config/ros_controllers.yaml"/>
 
   <!-- new ones -->
-  <!-- <param name="use_controller_manager" value="false"/>
+  <param name="use_controller_manager" value="false"/>
   <param name="trajectory_execution/execution_duration_monitoring" value="false"/>
-  <param name="moveit_controller_manager" value="moveit_simple_controller_manager/MoveItSimpleControllerManager"/> -->
+  <param name="moveit_controller_manager" value="moveit_simple_controller_manager/MoveItSimpleControllerManager"/>
 
 
 </launch>

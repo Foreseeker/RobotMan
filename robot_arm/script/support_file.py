@@ -4,6 +4,9 @@ import rospy
 from time import sleep
 from std_msgs.msg import Float64
 
+joint_low = [-2.97, -0.35, 0, -1.6, -2.62, -1.05, -1.62, -1.57, -2.27, -1.57, -2.27, -0.7, 0]
+joint_up = [0.87, 1.6, 0, 1.6, 0, 0.87, 1.52, 0.52, 0, 0.52, 0, 1.57, 1.6]
+
 pub_1 = rospy.Publisher('/rm/joint1_position_controller/command',Float64, queue_size=10)
 pub_2 = rospy.Publisher('/rm/joint2_position_controller/command',Float64, queue_size=10)
 pub_3 = rospy.Publisher('/rm/joint3_position_controller/command',Float64, queue_size=10)
