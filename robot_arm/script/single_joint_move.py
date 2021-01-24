@@ -24,7 +24,7 @@ def shoulder_2():
         pub.publish(position)
         rate.sleep()
 
-""" def arm_1():
+def arm_1():
     pub = rospy.Publisher('/rm/joint3_position_controller/command',Float64, queue_size=10)
     rospy.init_node('Py_Arm_01',anonymous=True)
     rate = rospy.Rate(10)
@@ -32,7 +32,7 @@ def shoulder_2():
         position = math.pi
         rospy.loginfo(position)
         pub.publish(position)
-        rate.sleep() """
+        rate.sleep()
 
 def arm_2():
     pub = rospy.Publisher('/rm/joint4_position_controller/command',Float64, queue_size=10)
